@@ -1,0 +1,51 @@
+{% extends 'basePage.html' %}
+{% block title %}My Bookings{% endblock %}
+{% block content %}
+            <center>
+                {% if msg %}
+                {{msg}}
+                {% else %}
+                <div class="col l9 s8">
+                    <table class="table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th><h5 class="header col s12 light">History</h5></th>
+                          <th></th>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                          <th>Hotel name</th>
+                          <th>Destination</th>
+                          <th>check in</th>
+                          <th>check out</th>
+                          <th>Amount</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for i in obj %}
+                        <tr>
+                          <td>{{i.bookperson}}</td>
+                          <td>{{i.companyName}}</td>
+                          <td>{{i.location}}</td>
+                          <td>
+                              {% if i.cancelled is False %}
+                              {{i.check_in}}{% else %} {{i.dummy_check_in}} {%endif%}
+                            </td>
+                          <td>
+                            {% if i.cancelled is False %}  
+                            {{i.check_out}}{% else %} {{i.dummy_check_out}} {%endif%}
+                        </td>
+                          <td>Rs{{i.paymentAmount}}</td>
+                          <td>{% if i.cancelled is False %} <a href="{% url 'bookingDetails' %}?id={{i.id}}"><button class="boxed-btn3 ">Show Details</button></a> 
+                            {% else %} 
+                            <a href="{% url 'bookingDetails' %}?id={{i.id}}"><button class="boxed-btn4">Show Details</button></a><b>&nbsp&nbsp&nbsp&nbsp Cancelled&nbsp&nbsp</b> {% endif %}</td>
+                          
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+                {% endif %}
+            </center>
+            {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'basePage.html' %}
+{% block title %}Booking confirmed{% endblock %}
+{% block content %}
+     
+        <center>
+        {% if msg %}
+        {{msg}} at
+        {% for i in obj %}
+        {{i.hotel_name}}<br>
+        {{i.addrss}}
+        {% endfor %}
+        {% endif %}
+        </center>
+        
+
+        {% endblock %}

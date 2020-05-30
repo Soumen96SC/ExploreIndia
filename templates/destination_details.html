@@ -1,0 +1,62 @@
+{% extends 'basePage.html' %}
+{% block title %}
+{% for i in d %}
+{{i.name}}
+{% endfor %}
+{% endblock %}
+{% block content %}
+    {% for i in d %}
+    <u><h1 style = "font-family:brush script mt;"><i>{{i.name}}</i></h1></u>
+    <h2 style = "font-family:brush script mt;">{{i.desc}}</h2>
+    <img src="{{img}}" height="650" width="1348" alt="" >
+       
+            
+        
+
+    <div class="destination_details_info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9"> 
+                    <div class="destination_info">
+                        <h3>Description</h3>
+                        <p>{{i.des1}}</p>
+                    </div>
+                    <div class="bordered_1px"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div><h3><i>Hotels of {{i.name}} </i></h3></div>
+    {% endfor %}
+    <div class="popular_places_area">
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-lg-8">
+                    <div class="row">
+                      {% for k in h %}
+                        <div class="col-lg-6 col-md-6">
+                            <div class="single_place">
+                                <div class="thumb">
+                                    <img src="/media/{{k.hotel_img}}" alt="">
+                                    <a href="#" class="prise">RS {{k.cost}}</a>
+                                </div>
+                                <div class="place_info">
+                                    <a href=""><h3>{{k.hotel_name}}</h3></a>
+                                    <p>{{k.addrss}}</p>
+                                    <a href="{% url 'book' %}?id={{k.id}}"><button>Book</button></a>
+                                </div>
+                            </div>
+                        </div>
+                      {% endfor %}  
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+
+                    {% endblock %}

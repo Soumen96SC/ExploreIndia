@@ -1,0 +1,336 @@
+{% load static %}
+{% static "img/works" as baseUrl %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Explore India</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href={"% static 'img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/works/label-travel-logo-icon-design-vector-22948244.jpg' %}" >
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="">
+                                        <img src="data:image/png;base64,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" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            {% if user.is_authenticated %} 
+                                            <li><font color="purple"><h4><i>Welcome &nbsp {{user.first_name}}</i></h4></font></li>
+                                            <li><a class="active" href="">home</a></li>
+                                            <li><a class="" href="About">About</a></li>
+                                            <li><a class="" href="Destinations">Destination</a></li>
+                                            <li><a href="mybookings">My Bookings </a></li>
+                                             <li><a href="accounts/logout">logout</a></li>
+                                            {% else %}
+                                            <li><a class="active" href="">home</a></li>
+                                            <li><a class="" href="About">About</a></li>
+                                            <li><a href="accounts/register">Register</a></li>
+                                            <li><a href="accounts/login">Login</a>
+                                            {% endif %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="seach_icon">
+                                <a data-toggle="modal" data-target="#exampleModalCenter" href="search">
+                                  <i class="fa fa-search"></i>
+                                </a>
+                            </div> -->
+                            <!-- <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3></h3>
+                                <p></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3></h3>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_3 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3></h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- where_togo_area_start  -->
+    <div class="where_togo_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="form_area">
+                        <h3>Where you want to go?</h3>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="search_wrap">
+                        <form class="search_form" action="search">
+                            <div class="input_field">
+                                <input type="text" placeholder="Where to go?" name="query">
+                            </div>
+                            <div class="input_field">
+                                <button class="boxed-btn4 " type="submit" >Search</button>
+                            </div>
+                            <!-- <div class="input_field">
+                                <select>
+                                    <option data-display="Travel type">Travel type</option>
+                                    <option value="1">Some option</option>
+                                    <option value="2">Another option</option>
+                                </select>
+                            </div> -->
+                            <!-- <div class="search_btn">
+                                <button class="boxed-btn4 " type="submit" >Search</button>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- where_togo_area_end  -->
+    
+    <!-- popular_destination_area_start  -->
+    
+            
+    <!-- popular_destination_area_end  -->
+
+    <!-- newletter_area_start  -->
+
+    <!-- newletter_area_end  -->
+    <h2 style="
+    margin-top: 19px;
+    margin-left: 130px;
+    color: rgb(29, 1, 20);
+    opacity: 0.6;
+" ><i>Want to spend your hoiday with the scenic beaty of India?</br>
+        so Join with us <a href"/accounts/register"><u>Here</u></a> to have a memoriable Holiday. </i></h2>
+       
+    <div class="popular_places_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                       {% if user.is_authenticated %}
+                            <a href="Destinations"><h3>Some Popular Destinantions</h3></a>
+                            {% else %}
+                            <a href="accounts/login"><h3>Some Popular Destinantions</h3></a>
+                            {% endif %}
+                            
+                        <p>
+                    </div>
+                </div>
+            </div>
+
+         {% for dest in dests %}     
+            <div class="col">
+                <div class="col-lg-4 col-md-6">    
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="{{dest.img.url}}" alt="">
+                             <a href="#" class="prise">${{dest.price}}</a>
+                        </div>
+                        <div class="place_info">
+                               {% if user.is_authenticated %}
+                                <a href="DestinationSearch/{{dest.id}}/"><h3>{{dest.name}}</h3></a>
+                                {% else %}
+                                <a href="accounts/login"><h3>{{dest.name}}</h3></a>
+                                {% endif %}
+                            <p>{{dest.desc}}</p>
+                           
+                        </div>
+                     
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                
+         {% endfor %}       
+
+
+
+
+
+  <!-- Modal -->
+  <form method="GET" action="search">
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="serch_form">
+              <input type="text" placeholder="Search" name="query">
+             <a href="/search"> <button type="submit">search</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+     <!-- Footer -->
+<footer class="page-footer font-small blue" style="
+background-color: rgb(4, 34, 73);
+">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="
+    color: white;
+">© 2020 Copyright:
+      <a href="About" style="
+      color: white;
+      font-family: cursive;
+      font-style: italic;
+  ">Soumen,Swagatika and Archana..</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+    <!-- link that opens popup -->
+<!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
+    <!-- JS here -->
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/scrollIt.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js"></script>
+    <script src="{% static 'js/nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/gijgo.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+   
+
+    
+    <!--contact js-->
+    <script src="{% static 'js/contact.js"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+        });
+    </script>
+</body>
+
+</html>
