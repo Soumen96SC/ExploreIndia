@@ -40,7 +40,7 @@ def register(request):
                 user= User.objects.create_user(username=urname, password=pass1, email=mailid, first_name=ftname, last_name=ltname)
                 user.save()
                 print("user created")
-                return redirect("/")
+                return redirect("/home")
 
             
         else:
