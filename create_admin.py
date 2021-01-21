@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import User
 
-User = get_user_model()
-User.objects.create_superuser('admin', 'admin@gmail.com', 'admin')
+user = User.objects.create_superuser(username="admin", password="admin", email="admin@gmail.com")
+user.save()
