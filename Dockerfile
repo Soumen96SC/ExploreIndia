@@ -9,7 +9,7 @@ RUN pip install pipenv
 
 RUN pipenv install
 
-RUN pipenv run python create_admin.py
+RUN pipenv run python manage.py createsuperuser
 
 RUN pipenv run python manage.py migrate
 
