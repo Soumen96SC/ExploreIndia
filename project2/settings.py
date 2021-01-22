@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'project2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lyxckdku',
-        'USER': 'lyxckdku',
-        'PASSWORD': 'S0K-P1aTJJ-cpUsfB2BBDdneXw89kPX2',
-        'HOST': 'rosie.db.elephantsql.com',
-        'PORT': '5432'
+        'ENGINE': os.getenv('ENGINE'),
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT')
     }
 }
 
